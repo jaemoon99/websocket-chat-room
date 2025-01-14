@@ -6,10 +6,10 @@ import java.time.LocalDateTime;
 
 @Data
 public class ResponseDto {
-    private Object message;
+    private ChatDto message;
     private LocalDateTime timestamp;
 
-    public ResponseDto(JsonDto message) {
+    public ResponseDto(ChatDto message) {
         this.message = message;
         this.timestamp = LocalDateTime.now();
     }

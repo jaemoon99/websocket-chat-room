@@ -9,7 +9,7 @@ public class GreetingController {
 
     @MessageMapping("/hello")
     @SendTo("/topic/greetings")
-    public ResponseDto greeting(JsonDto message) throws Exception {
+    public ResponseDto greeting(ChatDto message) throws Exception {
         Thread.sleep(1000); // simulated delay
         return new ResponseDto(message);
     }
