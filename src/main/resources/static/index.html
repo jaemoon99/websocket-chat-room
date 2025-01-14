@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time JSON Exchange</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+<noscript>
+    <h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable Javascript and reload this page!</h2>
+</noscript>
+<div class="container">
+    <h2>Real-time JSON Exchange</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket connection:</label>
+                    <button id="connect" class="btn btn-default" type="button">Connect</button>
+                    <button id="disconnect" class="btn btn-default" type="button" disabled>Disconnect</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="jsonInput">Input JSON:</label>
+                    <textarea id="jsonInput" class="form-control" rows="5" placeholder="Enter JSON data"></textarea>
+                </div>
+                <button id="sendJson" class="btn btn-primary" type="button">Send JSON</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="responseTable" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Response</th>
+                </tr>
+                </thead>
+                <tbody id="responseBody">
+                <!-- JSON response will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
