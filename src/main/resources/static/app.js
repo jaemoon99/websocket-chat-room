@@ -1,6 +1,6 @@
 // 1) STOMP 클라이언트 생성
 const stompClient = new StompJs.Client({
-    brokerURL: 'ws://localhost:38080/ws',  // 실제 서버 주소/포트로 맞게 수정
+    brokerURL: 'ws://localhost:38081/ws',  // 실제 서버 주소/포트로 맞게 수정
     reconnectDelay: 5000,
     debug: (str) => {
         console.log(str);
