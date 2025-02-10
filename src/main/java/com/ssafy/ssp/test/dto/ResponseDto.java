@@ -1,8 +1,6 @@
-package com.ssafy.ssp.test;
+package com.ssafy.ssp.test.dto;
 
 import lombok.Data;
-import java.util.List;
-import java.time.LocalDateTime;
 
 @Data
 public class ResponseDto {

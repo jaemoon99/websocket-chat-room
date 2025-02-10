@@ -1,4 +1,4 @@
-package com.ssafy.ssp.test;
+package com.ssafy.ssp.test.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

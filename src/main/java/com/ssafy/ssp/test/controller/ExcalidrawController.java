@@ -1,14 +1,14 @@
-package com.ssafy.ssp.test;
+package com.ssafy.ssp.test.controller;
 
-import java.util.List;
+import com.ssafy.ssp.test.dto.ResponseDto;
+import com.ssafy.ssp.test.dto.ExcalidrawDto;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class GreetingController {
+public class ExcalidrawController {
 
     @MessageMapping("/send/{roomId}")
     @SendTo("/pub/receive/{roomId}")
