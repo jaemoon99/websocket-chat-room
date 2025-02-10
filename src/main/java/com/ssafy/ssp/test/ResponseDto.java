@@ -1,16 +1,14 @@
 package com.ssafy.ssp.test;
 
 import lombok.Data;
-
+import java.util.List;
 import java.time.LocalDateTime;
 
 @Data
 public class ResponseDto {
-    private ChatDto message;
-    private LocalDateTime timestamp;
+    private ExcalidrawDto message;
 
-    public ResponseDto(ChatDto message) {
+    public ResponseDto(ExcalidrawDto message) {
         this.message = message;
-        this.timestamp = LocalDateTime.now();
     }
 }

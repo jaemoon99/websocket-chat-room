@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Real-time JSON Exchange</title>
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- STOMP.js (UMD 버전) -->
     <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+
+    <!-- 별도의 app.js 파일을 사용할 경우 -->
     <script src="/app.js"></script>
 </head>
 <body>
 <noscript>
-    <h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable Javascript and reload this page!</h2>
+    <h2 style="color: #ff0000">
+        Seems your browser doesn't support Javascript!<br/>
+        WebSocket relies on Javascript being enabled.<br/>
+        Please enable Javascript and reload this page!
+    </h2>
 </noscript>
+
 <div class="container">
     <h2>Real-time JSON Exchange</h2>
+
     <div class="row">
         <div class="col-md-6">
+            <!-- roomId를 입력 후 Connect/Disconnect -->
             <form class="form-inline">
                 <div class="form-group">
-                    <label for="connect">WebSocket connection:</label>
+                    <label for="roomId">Room ID:</label>
+                    <input type="text" id="roomId" class="form-control" placeholder="Enter room ID"/>
+                </div>
+                <div class="form-group" style="margin-left: 10px;">
+                    <label>WebSocket connection:</label>
                     <button id="connect" class="btn btn-default" type="button">Connect</button>
                     <button id="disconnect" class="btn btn-default" type="button" disabled>Disconnect</button>
                 </div>
             </form>
         </div>
+
         <div class="col-md-6">
             <form class="form-inline">
                 <div class="form-group">
                     <label for="jsonInput">Input JSON:</label>
                     <textarea id="jsonInput" class="form-control" rows="5" placeholder="Enter JSON data">
-{
-    "content": ""
-}
-</textarea>                </div>
+</textarea>
+                </div>
                 <button id="sendJson" class="btn btn-primary" type="button">Send JSON</button>
             </form>
         </div>
     </div>
-    <div class="row">
+
+    <div class="row" style="margin-top: 20px;">
         <div class="col-md-12">
-            <table id="responseTable" class="table table-striped">
+            <table id="responseTable" class="table table-striped" style="display:none;">
                 <thead>
                 <tr>
                     <th>Response</th>
                 </tr>
                 </thead>
                 <tbody id="responseBody">
-                <!-- JSON response will be displayed here -->
+                <!-- 서버에서 전달받은 JSON 메시지를 표시 -->
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+
 </body>
 </html>
